@@ -14,16 +14,21 @@ import com.iteyedl.alipapa.util.DB;
 public class UserManager {
 	
 	public static List<User> getUsers() {
-		List<User> list = new ArrayList<>();
+		List<User> list = new ArrayList<User>();
 		Connection conn = null;
-		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			conn = DB.getConn();
 			String sql = "select * from user";
 			rs = DB.executeQuery(conn, sql);
 			while(rs.next()) {
-				
+				User u = new User();
+				u.setId(rs.getInt("id"));
+				u.setUsername(rs.getString("username"));
+				u.setPhone(rs.getString("phone"));
+				u.setAddr(rs.getString("addr"));
+				u.setRdate(rs.getTimestamp("rdate"));
+				list.add(u);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
