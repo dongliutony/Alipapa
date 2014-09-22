@@ -1,11 +1,11 @@
-<%@ include file="_session.jsp" %>
-
 <html>
 <script language="javascript">
 	state = 0 ;
 	menuState = 0;
 	mainState = 0;
 </script>
+
+<%@ include file="_session.jsp" %>
 
 <head>
 <title>Alipapa Management Console</title>
@@ -18,8 +18,8 @@
     <frame src="menu.html" frameborder=NO border="0" scrolling="NO" >
     <frameset rows="20,100%,*" name="content"   cols="*">
       <frame src="title.html"  noresize scrolling="NO" name="mtitle">
-      <frame src=""   name="main" marginwidth="0" marginheight="0" scrolling="YES">
-      <frame src=""   name="detail">
+      <frame src="" frameborder="1" name="main" marginwidth="0" marginheight="0" scrolling="YES">
+      <frame src="" frameborder="1" name="detail">
     </frameset>
   </frameset>
 </frameset>

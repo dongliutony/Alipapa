@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" import="com.iteyedl.alipapa.model.*"
+<%@ page language="java" contentType="text/html; charset=utf-8" 
 	pageEncoding="utf-8"%>
+<%@ page import="com.iteyedl.alipapa.model.*" %>
+<%@ page import="com.iteyedl.alipapa.DAO.*" %>
 
 <%
-request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 String action = request.getParameter("action");
 if(action != null && action.equals("register")) {
 	String username = request.getParameter("username");
@@ -15,8 +17,8 @@ if(action != null && action.equals("register")) {
 	u.setPhone(phone);
 	u.setAddr(addr);
 	u.setRdate(new java.util.Date(System.currentTimeMillis()));
-	u.save();
-	%>
+	UserDAO.saveUser(u);
+%>
 	<center>Register Succeed! Thank you!</center>
 	<%
 	return;

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" import="com.iteyedl.alipapa.model.*"
 	pageEncoding="utf-8"%>
-<%@ page import="com.iteyedl.alipapa.model.*, java.sql.*, java.util.*, com.iteyedl.alipapa.service.*" %>
+<%@ page import="com.iteyedl.alipapa.model.*, java.sql.*, java.util.*,com.iteyedl.alipapa.DAO.*" %>
 
 <%@ include file="_session.jsp" %>
 
 <%
-//TODO should check the id valadation status
+	//TODO should check the id valadation status
 int id = Integer.parseInt(request.getParameter("id"));
-UserManager.deleteUser(id);
+UserDAO.deleteUser(id);
 %>
 
 <!DOCTYPE head PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

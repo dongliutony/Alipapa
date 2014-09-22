@@ -65,23 +65,23 @@ public class User {
 		this.rdate = rdate;
 	}
 	
-	public void save() {
-		Connection conn = DB.getConn();
-		String sql = "insert into user values (null, ?, ?, ?, ?, ?)";
-		PreparedStatement pstmt = DB.getPStmt(conn, sql);
-		try {
-			pstmt.setString(1, username);
-			pstmt.setString(2, password);
-			pstmt.setString(3, phone);
-			pstmt.setString(4, addr);
-			pstmt.setTimestamp(5, new Timestamp(rdate.getTime()));
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DB.closeStmt(pstmt);
-		}
-	}
+//	public void save() {
+//		Connection conn = DB.getConn();
+//		String sql = "insert into user values (null, ?, ?, ?, ?, ?)";
+//		PreparedStatement pstmt = DB.getPStmt(conn, sql);
+//		try {
+//			pstmt.setString(1, username);
+//			pstmt.setString(2, password);
+//			pstmt.setString(3, phone);
+//			pstmt.setString(4, addr);
+//			pstmt.setTimestamp(5, new Timestamp(rdate.getTime()));
+//			pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			DB.closeStmt(pstmt);
+//		}
+//	}
 	
 	
 	
